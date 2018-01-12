@@ -1,0 +1,10 @@
+C:\Users\yluo\Desktop\CodingDojo\Csharp\csharp_test\bin\Debug\netcoreapp1.1\csharp_test.deps.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\csharp_test\bin\Debug\netcoreapp1.1\csharp_test.runtimeconfig.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\csharp_test\bin\Debug\netcoreapp1.1\csharp_test.runtimeconfig.dev.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\csharp_test\obj\Debug\netcoreapp1.1\csharp_test.AssemblyInfo.cs
+C:\Users\yluo\Desktop\CodingDojo\Csharp\csharp_test\bin\Debug\netcoreapp1.1\csharp_test.dll
+C:\Users\yluo\Desktop\CodingDojo\Csharp\csharp_test\bin\Debug\netcoreapp1.1\csharp_test.pdb
+C:\Users\yluo\Desktop\CodingDojo\Csharp\csharp_test\obj\Debug\netcoreapp1.1\csharp_test.csproj.CoreCompileInputs.cache
+C:\Users\yluo\Desktop\CodingDojo\Csharp\csharp_test\obj\Debug\netcoreapp1.1\csharp_test.AssemblyInfoInputs.cache
+C:\Users\yluo\Desktop\CodingDojo\Csharp\csharp_test\obj\Debug\netcoreapp1.1\csharp_test.dll
+C:\Users\yluo\Desktop\CodingDojo\Csharp\csharp_test\obj\Debug\netcoreapp1.1\csharp_test.pdb

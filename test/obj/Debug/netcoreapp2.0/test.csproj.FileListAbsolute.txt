@@ -1,0 +1,10 @@
+C:\Users\yluo\Desktop\CodingDojo\Csharp\test\obj\Debug\netcoreapp2.0\test.csproj.CoreCompileInputs.cache
+C:\Users\yluo\Desktop\CodingDojo\Csharp\test\obj\Debug\netcoreapp2.0\test.AssemblyInfoInputs.cache
+C:\Users\yluo\Desktop\CodingDojo\Csharp\test\obj\Debug\netcoreapp2.0\test.AssemblyInfo.cs
+C:\Users\yluo\Desktop\CodingDojo\Csharp\test\bin\Debug\netcoreapp2.0\test.deps.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\test\bin\Debug\netcoreapp2.0\test.runtimeconfig.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\test\bin\Debug\netcoreapp2.0\test.runtimeconfig.dev.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\test\bin\Debug\netcoreapp2.0\test.dll
+C:\Users\yluo\Desktop\CodingDojo\Csharp\test\bin\Debug\netcoreapp2.0\test.pdb
+C:\Users\yluo\Desktop\CodingDojo\Csharp\test\obj\Debug\netcoreapp2.0\test.dll
+C:\Users\yluo\Desktop\CodingDojo\Csharp\test\obj\Debug\netcoreapp2.0\test.pdb
