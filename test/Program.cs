@@ -7,8 +7,8 @@ namespace test
         static void Main(string[] args)
         {   
             List<int> list = new List<int>(){1,2,3,4};
-            string str = string.Join(",",list);
-            Console.WriteLine(str);
+            int a = list.RemoveAt(1);
+            Console.WriteLine(a);
         }
     }
 }

@@ -1,0 +1,10 @@
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Puzzles\obj\Debug\netcoreapp2.0\Puzzles.csproj.CoreCompileInputs.cache
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Puzzles\obj\Debug\netcoreapp2.0\Puzzles.AssemblyInfoInputs.cache
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Puzzles\obj\Debug\netcoreapp2.0\Puzzles.AssemblyInfo.cs
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Puzzles\bin\Debug\netcoreapp2.0\Puzzles.deps.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Puzzles\bin\Debug\netcoreapp2.0\Puzzles.runtimeconfig.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Puzzles\bin\Debug\netcoreapp2.0\Puzzles.runtimeconfig.dev.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Puzzles\bin\Debug\netcoreapp2.0\Puzzles.dll
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Puzzles\bin\Debug\netcoreapp2.0\Puzzles.pdb
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Puzzles\obj\Debug\netcoreapp2.0\Puzzles.dll
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Puzzles\obj\Debug\netcoreapp2.0\Puzzles.pdb
