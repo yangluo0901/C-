@@ -1,0 +1,10 @@
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Cards\bin\Debug\netcoreapp2.0\Cards.deps.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Cards\bin\Debug\netcoreapp2.0\Cards.runtimeconfig.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Cards\bin\Debug\netcoreapp2.0\Cards.runtimeconfig.dev.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Cards\bin\Debug\netcoreapp2.0\Cards.dll
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Cards\bin\Debug\netcoreapp2.0\Cards.pdb
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Cards\obj\Debug\netcoreapp2.0\Cards.csproj.CoreCompileInputs.cache
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Cards\obj\Debug\netcoreapp2.0\Cards.AssemblyInfoInputs.cache
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Cards\obj\Debug\netcoreapp2.0\Cards.AssemblyInfo.cs
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Cards\obj\Debug\netcoreapp2.0\Cards.dll
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Cards\obj\Debug\netcoreapp2.0\Cards.pdb

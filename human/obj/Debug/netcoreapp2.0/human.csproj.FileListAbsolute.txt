@@ -1,0 +1,10 @@
+C:\Users\yluo\Desktop\CodingDojo\Csharp\human\bin\Debug\netcoreapp2.0\human.deps.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\human\bin\Debug\netcoreapp2.0\human.runtimeconfig.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\human\bin\Debug\netcoreapp2.0\human.runtimeconfig.dev.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\human\bin\Debug\netcoreapp2.0\human.dll
+C:\Users\yluo\Desktop\CodingDojo\Csharp\human\bin\Debug\netcoreapp2.0\human.pdb
+C:\Users\yluo\Desktop\CodingDojo\Csharp\human\obj\Debug\netcoreapp2.0\human.csproj.CoreCompileInputs.cache
+C:\Users\yluo\Desktop\CodingDojo\Csharp\human\obj\Debug\netcoreapp2.0\human.AssemblyInfoInputs.cache
+C:\Users\yluo\Desktop\CodingDojo\Csharp\human\obj\Debug\netcoreapp2.0\human.AssemblyInfo.cs
+C:\Users\yluo\Desktop\CodingDojo\Csharp\human\obj\Debug\netcoreapp2.0\human.dll
+C:\Users\yluo\Desktop\CodingDojo\Csharp\human\obj\Debug\netcoreapp2.0\human.pdb
