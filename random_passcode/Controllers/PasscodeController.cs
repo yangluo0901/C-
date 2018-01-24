@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
+
 namespace random_passcode.Controllers
 {
     public class PasscodeController : Controller{
@@ -15,10 +16,10 @@ namespace random_passcode.Controllers
         }
         [HttpGet]
         [Route("generate")]
-        public IActionResult generate()
+        public IActionResult Generate()
         {
             count+=1;
-            Random rand = new Random();
+            Random rand = new Random(); 
             string passcode = "";
             for ( int i = 0 ; i < 14; i++)
             {   
