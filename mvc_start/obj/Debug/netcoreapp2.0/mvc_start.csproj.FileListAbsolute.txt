@@ -1,0 +1,10 @@
+C:\Users\yluo\Desktop\CodingDojo\Csharp\mvc_start\bin\Debug\netcoreapp2.0\mvc_start.deps.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\mvc_start\bin\Debug\netcoreapp2.0\mvc_start.runtimeconfig.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\mvc_start\bin\Debug\netcoreapp2.0\mvc_start.runtimeconfig.dev.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\mvc_start\bin\Debug\netcoreapp2.0\mvc_start.dll
+C:\Users\yluo\Desktop\CodingDojo\Csharp\mvc_start\bin\Debug\netcoreapp2.0\mvc_start.pdb
+C:\Users\yluo\Desktop\CodingDojo\Csharp\mvc_start\obj\Debug\netcoreapp2.0\mvc_start.csproj.CoreCompileInputs.cache
+C:\Users\yluo\Desktop\CodingDojo\Csharp\mvc_start\obj\Debug\netcoreapp2.0\mvc_start.AssemblyInfoInputs.cache
+C:\Users\yluo\Desktop\CodingDojo\Csharp\mvc_start\obj\Debug\netcoreapp2.0\mvc_start.AssemblyInfo.cs
+C:\Users\yluo\Desktop\CodingDojo\Csharp\mvc_start\obj\Debug\netcoreapp2.0\mvc_start.dll
+C:\Users\yluo\Desktop\CodingDojo\Csharp\mvc_start\obj\Debug\netcoreapp2.0\mvc_start.pdb

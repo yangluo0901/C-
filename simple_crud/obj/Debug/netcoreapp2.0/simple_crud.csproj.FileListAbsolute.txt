@@ -1,0 +1,10 @@
+C:\Users\yluo\Desktop\CodingDojo\Csharp\simple_crud\bin\Debug\netcoreapp2.0\simple_crud.deps.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\simple_crud\bin\Debug\netcoreapp2.0\simple_crud.runtimeconfig.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\simple_crud\bin\Debug\netcoreapp2.0\simple_crud.runtimeconfig.dev.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\simple_crud\bin\Debug\netcoreapp2.0\simple_crud.dll
+C:\Users\yluo\Desktop\CodingDojo\Csharp\simple_crud\bin\Debug\netcoreapp2.0\simple_crud.pdb
+C:\Users\yluo\Desktop\CodingDojo\Csharp\simple_crud\obj\Debug\netcoreapp2.0\simple_crud.csproj.CoreCompileInputs.cache
+C:\Users\yluo\Desktop\CodingDojo\Csharp\simple_crud\obj\Debug\netcoreapp2.0\simple_crud.AssemblyInfoInputs.cache
+C:\Users\yluo\Desktop\CodingDojo\Csharp\simple_crud\obj\Debug\netcoreapp2.0\simple_crud.AssemblyInfo.cs
+C:\Users\yluo\Desktop\CodingDojo\Csharp\simple_crud\obj\Debug\netcoreapp2.0\simple_crud.dll
+C:\Users\yluo\Desktop\CodingDojo\Csharp\simple_crud\obj\Debug\netcoreapp2.0\simple_crud.pdb
