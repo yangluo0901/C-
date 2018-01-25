@@ -9,12 +9,14 @@ namespace DojoDachi
         public int meal;
         public int energy;
         public Random rand;
+        public bool status;
         public  Pet()
         {
             fullness = 20;
             happiness = 20;
             energy = 50;
             meal = 3;
+            status = true;
             rand = new Random();
         }
         public bool chance ()
@@ -29,47 +31,62 @@ namespace DojoDachi
                 return true;//like it;
             }
         }
-        public Pet Feed()
+        public int Feed()
         {
+            int increment = rand.Next(5,11);
             if (meal >0)
             {
                 meal -= 1;
                 if (chance())
-                {
-                    fullness += rand.Next(5,11);
+                {   
+                    
+                    fullness += increment;
                 }
             }
-            
-            return this;
+            return increment;
         }
-        public Pet Play()
-        {
+        public int Play()
+        {   int increment = rand.Next(5,11);
             if (energy >= 5)
             {
                 energy -= 5;
-                if (chance)
-                {
-                    happiness += rand.Next(5,11);
+                if (chance())
+                {   
+                    happiness += increment;
                 }
-                return this;
+                
             }
+            return increment;
             
         }
-        public Pet  Work()
-        {
+        public int  Work()
+        {   int increment = rand.Next(1,4);
             if(energy >= 5)
             {
                 energy -=5;
-                meal += rand.Next(1,4);
+                meal += increment;
             }
-            return this;
+            return increment;
         }
         public Pet Sleep()
         {
             energy += 15;
             fullness -= 5;
             happiness -= 5;
+            this.Status();
             return this;
+            
+        }
+        public void Status()
+        {
+            if ( fullness <1 || happiness < 1)
+            {
+                status = false;
+            }
+            else
+            {
+                status = true;
+            }
         }
     }
 }

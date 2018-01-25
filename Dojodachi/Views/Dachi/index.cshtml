@@ -1,0 +1,124 @@
+<html>
+    <head>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <title>DojoDachi</title>
+        <script>
+            $(document).ready(function(){
+                $('#feed').click(function(){
+                    console.log('feed is clicked')
+                    $.ajax({
+                        method:'get',
+                        url: '/feed',
+                        success: function(res){
+                            if (res.error){
+                                $('.notification').html(res.error);
+                            }else{
+                                $('.fullness').html(res.instance.fullness);
+                                $('.happiness').html(res.instance.happiness);
+                                $('.energy').html(res.instance.energy);
+                                $('.meal').html(res.instance.meal);
+                                $('.notification').html('You feed your dojodachi,fullness + '+res.increment+ ' , meals -1');
+                            }
+                            
+                        }
+                    });
+                });
+                $('#play').click(function(){
+                    $.ajax({
+                        method:'get',
+                        url: '/play',
+                        success: function(res){
+                            if(res.error){
+                                $('.notification').html(res.error);
+                            }else{
+                                 $('.energy').html(res.instance.energy);
+                                 $('.happiness').html(res.instance.happiness);
+                                 $('.notification').html('You play with your dojodachi,happiness + '+res.increment+ ' , energy -5');
+                            }
+                        }
+                    });
+                });
+
+                $('#work').click(function(){
+                    $.ajax({
+                        method:'get',
+                        url: '/work',
+                        success: function(res){
+                            if(res.error){
+                                $('.notification').html(res.error);
+                            }else{
+                                 $('.energy').html(res.instance.energy);
+                                 $('.meal').html(res.instance.meal);
+                                 $('.notification').html('You work with your dojodachi,meals + '+res.increment+ ' , energy -5');
+                            }
+                        }
+                    });
+                });
+
+                $('#sleep').click(function(){
+                    $.ajax({
+                        method:'get',
+                        url: '/sleep',
+                        success: function(res){
+                            if(res.error){
+                                $('.notification').html(res.error);
+                            }else{
+                                 $('.energy').html(res.instance.energy);
+                                 $('.fullness').html(res.instance.fullness);
+                                 $('.happiness').html(res.instance.happiness);
+                                 console.log(res.status);
+                                 if(res.status == false){
+                                      $('.notification').html('Dojodachi dies! ');
+                                      $('#buttons').empty();
+                                      $('#buttons').html("<div class='col-md-3 col-md-offset-4.5'><a href='/'><button type='button' class='btn btn-primary id=reset'>Reset</button></a></div>");
+                                                    
+                                }else{
+                                    $('.notification').html('Dojodachi slept, enery +15,  fullness -5, happiness -5');
+                                }
+                                 
+                            }
+                            
+                        }
+                    });
+                });
+                
+            });
+        </script>
+    </head>
+    <body>
+        <div class = "container">
+            <p class='text-center'>Fullness: <span class='fullness'>@ViewBag.fullness</span>  Happiness: <span class='happiness'>@ViewBag.happiness</span>   Energy : <span class='energy'>@ViewBag.energy</span> Meals: <span class='meal'>@ViewBag.meal</span></p>
+            <div class='well'>
+                <img src="" alt='a pic here'>
+                <p class='notification'></p>
+            </div>
+            <div class='row' id="buttons">
+                
+                   
+                        <div class='col-md-3'>
+                        <button type = 'button' class='btn btn-primary' id='feed'>Feed</button>
+                        </div>
+                        <div class='col-md-3'>
+                            <button type = 'button' class='btn btn-primary' id='play'>Play</button>
+                        </div>
+                        <div class='col-md-3'>
+                            <button type = 'button' class='btn btn-primary' id='work'>Work</button>
+                        </div>
+                        <div class='col-md-3'>
+                            <button type = 'button' class='btn btn-primary' id='sleep'>Sleep</button>
+                        </div>
+            
+                    
+                
+                
+            </div>
+        </div>
+    </body>
+</html>

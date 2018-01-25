@@ -16,7 +16,7 @@ namespace random_passcode.Controllers
         }
         [HttpGet]
         [Route("generate")]
-        public IActionResult Generate()
+        public JsonResult Generate()
         {
             count+=1;
             Random rand = new Random(); 
@@ -37,7 +37,11 @@ namespace random_passcode.Controllers
                 }
             }
             Console.WriteLine(passcode);
-            return RedirectToAction("index", new { count = count, passcode = passcode});
+            var response = new {
+                count = count,
+                passcode = passcode
+            };
+            return Json(response);
         }
     }
 }

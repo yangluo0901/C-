@@ -13,12 +13,13 @@
                 $("button").click(function(){
                     console.log("button is clicked!")
                     $.ajax({
-                        method: 'post',
-                        url: '/generate/Generate',
+                        method: 'get',
+                        url: '/generate',
                         success: function(response)
                         {
                             console.log(response);
                             $("textarea").html(response.passcode);
+                            $("span").html(response.count)
                         }
                     });
                 });
@@ -27,8 +28,8 @@
     </head>
     <body>
         <div class="Container">
-            <h1>Random Passcode (passcode # @ViewBag.count)</h1>
-            <textarea rows="1" cols="10">@ViewBag.passcode</textarea>
+            <h1>Random Passcode (passcode # <span></span>)</h1>
+            <textarea rows="1" cols="10"></textarea>
             <button class="btn btn-primary">Generate</button>
         </div>
     </body>
