@@ -1,0 +1,10 @@
+C:\Users\yluo\Desktop\CodingDojo\Csharp\form_submission\obj\Debug\netcoreapp2.0\form_submission.csproj.CoreCompileInputs.cache
+C:\Users\yluo\Desktop\CodingDojo\Csharp\form_submission\obj\Debug\netcoreapp2.0\form_submission.AssemblyInfoInputs.cache
+C:\Users\yluo\Desktop\CodingDojo\Csharp\form_submission\obj\Debug\netcoreapp2.0\form_submission.AssemblyInfo.cs
+C:\Users\yluo\Desktop\CodingDojo\Csharp\form_submission\bin\Debug\netcoreapp2.0\form_submission.deps.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\form_submission\bin\Debug\netcoreapp2.0\form_submission.runtimeconfig.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\form_submission\bin\Debug\netcoreapp2.0\form_submission.runtimeconfig.dev.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\form_submission\bin\Debug\netcoreapp2.0\form_submission.dll
+C:\Users\yluo\Desktop\CodingDojo\Csharp\form_submission\bin\Debug\netcoreapp2.0\form_submission.pdb
+C:\Users\yluo\Desktop\CodingDojo\Csharp\form_submission\obj\Debug\netcoreapp2.0\form_submission.dll
+C:\Users\yluo\Desktop\CodingDojo\Csharp\form_submission\obj\Debug\netcoreapp2.0\form_submission.pdb

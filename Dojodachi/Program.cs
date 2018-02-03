@@ -15,11 +15,14 @@ namespace Dojodachi
         public static void Main(string[] args)
         {
             BuildWebHost(args).Run();
-        }
-
-        public static IWebHost BuildWebHost(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
+            IWebHost host = new WebHostBuilder()
+                .UseKestrel()
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseStartup<Startup>();
+                // New Use method
+                .UseIISIntegration()
                 .Build();
+            host.Run();
+        }
     }
 }

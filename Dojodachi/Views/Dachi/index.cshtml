@@ -26,7 +26,7 @@
                                 $('.meal').html(res.instance.meal);
                                 $('.notification').html('You feed your dojodachi,fullness + '+res.increment+ ' , meals -1');
                             }
-                            
+
                         }
                     });
                 });
@@ -78,17 +78,17 @@
                                       $('.notification').html('Dojodachi dies! ');
                                       $('#buttons').empty();
                                       $('#buttons').html("<div class='col-md-3 col-md-offset-4.5'><a href='/'><button type='button' class='btn btn-primary id=reset'>Reset</button></a></div>");
-                                                    
+
                                 }else{
                                     $('.notification').html('Dojodachi slept, enery +15,  fullness -5, happiness -5');
                                 }
-                                 
+
                             }
-                            
+
                         }
                     });
                 });
-                
+
             });
         </script>
     </head>
@@ -100,8 +100,8 @@
                 <p class='notification'></p>
             </div>
             <div class='row' id="buttons">
-                
-                   
+
+
                         <div class='col-md-3'>
                         <button type = 'button' class='btn btn-primary' id='feed'>Feed</button>
                         </div>
@@ -114,10 +114,9 @@
                         <div class='col-md-3'>
                             <button type = 'button' class='btn btn-primary' id='sleep'>Sleep</button>
                         </div>
-            
-                    
-                
-                
+
+                        
+
             </div>
         </div>
     </body>

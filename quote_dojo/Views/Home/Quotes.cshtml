@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Quotes</title>
+  </head>
+  <body>
+    <h1 class="text-center">Here are awesome quotes !</h1>
+    <div class="container">
+      @foreach ( var entry in ViewBag.joined)
+      {
+        <h3>"@entry["content"]"</h3>
+        <p class=col-sm-offset-4> - @entry["first_name"] at @entry["created_at"]</p>
+      }
+    </div>
+  </body>
+</html>

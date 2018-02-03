@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+@model User
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Form Submission</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Enter your information</h1>
+      <form class="form-horizontal" action="/success" method="post">
+        <div class="form-group">
+          <span asp-validation-for="@Model.first_name"></span>
+          <label class="col-sm-2 control-label" for="first_name">First Name</label>
+          <div class="col-sm-5">
+            <input type="text" name="first_name" class="form-contrl">
+          </div>
+        </div>
+        <div class="form-group">
+          <span asp-validation-for="@Model.last_name"></span>
+          <label class="col-sm-2 control-label" for="last_name">Last Name</label>
+          <div class="col-sm-5">
+            <input type="text" name="last_name" class="form-contrl">
+          </div>
+        </div>
+        <div class="form-group">
+          <span asp-validation-for="@Model.age"></span>
+          <label class="col-sm-2 control-label" for="age">Age</label>
+          <div class="col-sm-5">
+            <input type="text" name="age" class="form-contrl">
+          </div>
+        </div>
+        <div class="form-group">
+          <span asp-validation-for="@Model.email"></span>
+          <label class="col-sm-2 control-label" for="email">E-mail</label>
+          <div class="col-sm-5">
+            <input type="text" name="email" class="form-contrl">
+          </div>
+        </div>
+        <div class="form-group">
+          <span asp-validation-for="@Model.password"></span>
+          <label class="col-sm-2 control-label" for="password">Password</label>
+          <div class="col-sm-5">
+            <input type="text" name="password" class="form-contrl">
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <input class="btn-primary" type="submit" name="submit" value="Submit">
+        </div>
+      </form>
+    </div>
+
+  </body>
+</html>
