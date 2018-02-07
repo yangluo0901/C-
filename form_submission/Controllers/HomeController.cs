@@ -24,6 +24,8 @@ namespace form_submission.Controllers
         {
             return View();
         }
+
+
         [HttpPost]
         [Route("success")]
         public IActionResult Submit(User user)
@@ -40,7 +42,7 @@ namespace form_submission.Controllers
             else
             {
                 Console.WriteLine("I am here");
-                return View("Index",user);
+                return RedirectToAction ("Index",user);
             }
 
            

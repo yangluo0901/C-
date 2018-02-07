@@ -1,0 +1,10 @@
+C:\Users\yluo\Desktop\CodingDojo\Csharp\login_and_registration\bin\Debug\netcoreapp2.0\login_and_registration.deps.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\login_and_registration\bin\Debug\netcoreapp2.0\login_and_registration.runtimeconfig.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\login_and_registration\bin\Debug\netcoreapp2.0\login_and_registration.runtimeconfig.dev.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\login_and_registration\bin\Debug\netcoreapp2.0\login_and_registration.dll
+C:\Users\yluo\Desktop\CodingDojo\Csharp\login_and_registration\bin\Debug\netcoreapp2.0\login_and_registration.pdb
+C:\Users\yluo\Desktop\CodingDojo\Csharp\login_and_registration\obj\Debug\netcoreapp2.0\login_and_registration.csproj.CoreCompileInputs.cache
+C:\Users\yluo\Desktop\CodingDojo\Csharp\login_and_registration\obj\Debug\netcoreapp2.0\login_and_registration.AssemblyInfoInputs.cache
+C:\Users\yluo\Desktop\CodingDojo\Csharp\login_and_registration\obj\Debug\netcoreapp2.0\login_and_registration.AssemblyInfo.cs
+C:\Users\yluo\Desktop\CodingDojo\Csharp\login_and_registration\obj\Debug\netcoreapp2.0\login_and_registration.dll
+C:\Users\yluo\Desktop\CodingDojo\Csharp\login_and_registration\obj\Debug\netcoreapp2.0\login_and_registration.pdb

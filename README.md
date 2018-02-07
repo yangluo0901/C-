@@ -1,2 +1,0 @@
-# C-
-Dojo C# Assignment
