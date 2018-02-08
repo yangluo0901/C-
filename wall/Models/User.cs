@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace wall.Models
 {
-    public class User
+    public class RegUser
     {
         [Required]
         [MinLength(2, ErrorMessage="Name should be at least 2 characters !")]
@@ -15,11 +15,22 @@ namespace wall.Models
         public string last_name {get;set;}
 
         [EmailAddress]
+        [Required]
         public string email {get;set;}
         [Required]
         [DataType(DataType.Password)]
         [MinLength(8, ErrorMessage="Password should be at least 8 characters !")]
         public string password {get;set;}
 
+    }
+    public class LoginUser
+    {
+        [EmailAddress]
+        [Required]
+        public string email {get;set;}
+        [Required]
+        [DataType(DataType.Password)]
+        [MinLength(8, ErrorMessage="Password should be at least 8 characters !")]
+        public string password {get;set;}
     }
 }

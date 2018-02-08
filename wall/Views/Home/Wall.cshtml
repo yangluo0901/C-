@@ -1,0 +1,50 @@
+@{
+    ViewData["Title"] = "Wall";
+}
+
+<div class="container">
+  <form action="/add_message" method="post">
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="message">Post a message :</label>
+      <textarea class="form-control" name="message" rows="8" cols="80"></textarea>
+    </div>
+    <div class="form-group">
+      <input type="submit" class="btn btn-primary" value="Post a message">
+    </div>
+  </form>
+
+  <div class="container">
+    <ul>
+
+        @foreach (var message in @ViewBag.messages)
+        {
+          <li>
+            <h3>@result["first_name"] @result["last_name"] - @result["created_at"]</h3>
+            <p>@result["content"]</p>
+            <ul>
+                foreach(var comment in @ViewBag.comments)
+                {
+                   if(comment["message_id"] == @message["message_id"])
+                    {
+                        <li>
+                            <strong>@comment["name"] - @comment["created_at"]</strong>
+                            <p>@comment["content"]</p>
+                        </li>
+                    }
+                }
+            </ul>
+            <form action="/add_comment" method="post">
+            <div class="form-group">
+              <textarea class="form-control" name="comment" rows="8" cols="80"></textarea>
+            </div>
+            <div class="form-group">
+              <input type="submit" class="btn btn-primary" value="Post">
+            </div>
+            </form>
+          </li>
+        }
+
+    </ul>
+
+  </div>
+</div>
