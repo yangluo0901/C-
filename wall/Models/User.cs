@@ -27,10 +27,10 @@ namespace wall.Models
     {
         [EmailAddress]
         [Required]
-        public string email {get;set;}
+        public string loginemail {get;set;}
         [Required]
         [DataType(DataType.Password)]
         [MinLength(8, ErrorMessage="Password should be at least 8 characters !")]
-        public string password {get;set;}
+        public string loginpassword {get;set;}
     }
 }

@@ -9703,11 +9703,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\yluo\\Desktop\\CodingDojo\\Csharp\\wall\\wall.csproj",
+      "projectUniqueName": "C:\\Users\\yluo\\Desktop\\CodingDojo\\Csharp\\wall\\wall.csproj",
       "projectName": "wall",
-      "projectPath": "c:\\Users\\yluo\\Desktop\\CodingDojo\\Csharp\\wall\\wall.csproj",
+      "projectPath": "C:\\Users\\yluo\\Desktop\\CodingDojo\\Csharp\\wall\\wall.csproj",
       "packagesPath": "C:\\Users\\yluo\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\yluo\\Desktop\\CodingDojo\\Csharp\\wall\\obj\\",
+      "outputPath": "C:\\Users\\yluo\\Desktop\\CodingDojo\\Csharp\\wall\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
