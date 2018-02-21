@@ -10,9 +10,14 @@ namespace PokeInfo.Controllers
     {
         // GET: /Home/
         [HttpGet]
-        [Route("")]
-        public IActionResult Index()
+        [Route("pokeinfo/{id}")]
+        public IActionResult Index(int id)
         {
+            Pokemon instance = new Pokemon();
+            WebRequest.GetPokeInfoAsync(id,pokemon =>{
+                 instance = pokemon;
+            }).Wait();
+            ViewBag.pokemon = instance;
             return View();
         }
     }

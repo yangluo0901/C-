@@ -25,13 +25,13 @@ namespace wall.Controllers
             {
                 PasswordHasher<RegUser> hasher = new PasswordHasher<RegUser>();
                 string hashed = hasher.HashPassword(user,user.password);
-                string reg_query = $@"INSERT INTO users (first_name, last_name, email, password, created_at) 
+                string reg_query = $@"INSERT INTO users (first_name, last_name, email, password, created_at)
                 VALUES ('{user.first_name}','{user.last_name}','{user.email}','{hashed}',NOW())";
                 DbConnector.Execute(reg_query);
                 TempData["success"]="Registered, please log in !";
                 return RedirectToAction("Index");
             }
-            
+
             return View("Index");
         }
 
@@ -59,7 +59,7 @@ namespace wall.Controllers
                 ViewBag.errormessage="User does not exist !";
             }
             }
-            
+
             Console.WriteLine("not valid");
             return View("Index");
         }
@@ -67,8 +67,8 @@ namespace wall.Controllers
         [HttpGet("wall/{user_id}")]
         public IActionResult Wall(int user_id)
         {
-            
-            string messages_query = $@"SELECT first_name, last_name, content, messages.id AS message_id, messages.created_at 
+
+            string messages_query = $@"SELECT first_name, last_name, content, messages.id AS message_id, messages.created_at
                                 From messages JOIN users ON users.id = messages.poster_id
                                 ORDER BY messages.created_at DESC
                                 ";
@@ -80,7 +80,7 @@ namespace wall.Controllers
             List<Dictionary<string,object>> comments = DbConnector.Query(comments_query);
             List<Dictionary<string,object>> log_name = DbConnector.Query($"SELECT first_name FROM users WHERE id = {user_id}");
             ViewBag.log_name = log_name[0]["first_name"];
-            ViewBag.messages = messages; 
+            ViewBag.messages = messages;
             ViewBag.comments = comments;
             return View();
         }

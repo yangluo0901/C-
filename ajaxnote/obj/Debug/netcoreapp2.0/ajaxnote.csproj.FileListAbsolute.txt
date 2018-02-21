@@ -1,0 +1,10 @@
+C:\Users\yluo\Desktop\CodingDojo\Csharp\ajaxnote\obj\Debug\netcoreapp2.0\ajaxnote.csproj.CoreCompileInputs.cache
+C:\Users\yluo\Desktop\CodingDojo\Csharp\ajaxnote\obj\Debug\netcoreapp2.0\ajaxnote.AssemblyInfoInputs.cache
+C:\Users\yluo\Desktop\CodingDojo\Csharp\ajaxnote\obj\Debug\netcoreapp2.0\ajaxnote.AssemblyInfo.cs
+C:\Users\yluo\Desktop\CodingDojo\Csharp\ajaxnote\bin\Debug\netcoreapp2.0\ajaxnote.deps.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\ajaxnote\bin\Debug\netcoreapp2.0\ajaxnote.runtimeconfig.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\ajaxnote\bin\Debug\netcoreapp2.0\ajaxnote.runtimeconfig.dev.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\ajaxnote\bin\Debug\netcoreapp2.0\ajaxnote.dll
+C:\Users\yluo\Desktop\CodingDojo\Csharp\ajaxnote\bin\Debug\netcoreapp2.0\ajaxnote.pdb
+C:\Users\yluo\Desktop\CodingDojo\Csharp\ajaxnote\obj\Debug\netcoreapp2.0\ajaxnote.dll
+C:\Users\yluo\Desktop\CodingDojo\Csharp\ajaxnote\obj\Debug\netcoreapp2.0\ajaxnote.pdb
