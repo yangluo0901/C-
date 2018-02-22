@@ -1,13 +1,13 @@
-namespace ajaxnote
+namespace ajaxnote.Models
 {
     public class AddNote
     {
-        public string title;
-        public string content;
+        public string title {get;set;}
+       
     }
     public class UpdateNote
     {
-        public string title;
-        public string content;
+        public int id {get;set;}
+        public string description {get;set;}
     }
 }

@@ -2,19 +2,16 @@
 <div class="container">
   <form class="form-horizontal" action="/addnote" method="post">
     <div class="form-group">
-      <label for="title" class="col-sm-2 control-label">title</label>
+      <label for="title" class="col-sm-2 control-label">Note</label>
       <div class="col-sm-5">
-        <input type="text" name="title" placeholder="title">
+        <input type="text" asp-for="title" placeholder="title">
       </div>
     </div>
     <div class="form-group">
-      <label for="content" class="col-sm-2 control-label">Description</label>
-      <div class="col-sm-5">
-        <textarea name="content" rows="8" cols="80">description</textarea>
+      <div class="col-sm-2 col-sm-offset-4">
+        <input type="submit" class="btn btn-primary" name="submit" value="Add">
       </div>
-    </div>
-    <div class="form-group">
-      <input type="submit" class="btn btn-success" name="submit" value="Add">
+      
     </div>
   </form>
 

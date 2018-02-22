@@ -1,1 +1,43 @@
-@RenderBody();
+
+<html>
+    <head>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    </head>
+    <body>
+        @RenderBody()
+        <script>
+            function Delete(noteid){
+                $.post(`/delete/${noteid}`, function(){
+                    window.location.replace(''); //whithout back history; or can use window.location.href='...'
+                })
+            }
+
+            function Edit(noteid){
+                console.log("note title is clicked !!")
+                $('#description_'+noteid).append(`<form class='form-horizontal' action='/updatenote' method='post'>
+                                                    <div class='form-group'>
+                                                        <textarea name = 'description' cols='7' rows='4' class='col-sm-2 col-sm-offset-1'>description </textarea>
+                                                    </div>
+                                                    <div class='form-group'>
+                                                         <input type="hidden" value='${noteid}' name='id'>
+                                                    </div>
+                                                    <div class='form-group'>
+                                                        <input type="submit" class='btn btn-primary ' value='Submit'>
+                                                    </div>
+                                                  </form>`);
+            }
+        </script>
+    </body>
+    
+</html>
+
+
+

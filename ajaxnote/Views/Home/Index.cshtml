@@ -1,15 +1,30 @@
 <div class="container">
   <h3>Notes:</h3>
   <hr>
-  @{
-    foreach(var note in @ViewBag.notes)
-    {
-      <h3 class = "col-sm-2">@note["title"]</h3>
-      <p class="col-sm-2 col-sm-offset-4 text-important"> Delete </p>
-      <p>note["content"]</p>
-    }
-  }
+    <div class="col-sm-9 col-sm-offset-2">
+      @{
+        foreach(var note in @ViewBag.notes)
+        {
+          <div class="row">
+            <h3 class = "col-sm-2" onclick="Edit(@note["id"])">@note["note"]</h3>
+            <a class="col-sm-2 col-sm-offset-2 " onclick="Delete(@note["id"])">Delete</a>
+          </div>  
+          <div class="row" id="description_@note["id"]">
+            @if(note["description"].ToString().Length != 0)
+            {
+            
+              <textarea  cols='7' rows='4' class='col-sm-2 col-sm-offset-1'>@note["description"] </textarea>
+          
+            }
+          </div>
+        }
+      }
+    </div>
+    
 </div>
-
-@Html.Partial("./Partials/AddNote")
-@Html.Partial("./Partials/UpdateNote")
+<div class="col-sm-9 col-sm-offset-2">
+    <br>
+    <br>
+    @Html.Partial("./Partials/AddNote")
+</div>
+<p>@ViewBag.errormessage</p>
