@@ -1,0 +1,10 @@
+C:\Users\yluo\Desktop\CodingDojo\Csharp\movieapi\bin\Debug\netcoreapp2.0\movieapi.deps.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\movieapi\bin\Debug\netcoreapp2.0\movieapi.runtimeconfig.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\movieapi\bin\Debug\netcoreapp2.0\movieapi.runtimeconfig.dev.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\movieapi\bin\Debug\netcoreapp2.0\movieapi.dll
+C:\Users\yluo\Desktop\CodingDojo\Csharp\movieapi\bin\Debug\netcoreapp2.0\movieapi.pdb
+C:\Users\yluo\Desktop\CodingDojo\Csharp\movieapi\obj\Debug\netcoreapp2.0\movieapi.csproj.CoreCompileInputs.cache
+C:\Users\yluo\Desktop\CodingDojo\Csharp\movieapi\obj\Debug\netcoreapp2.0\movieapi.AssemblyInfoInputs.cache
+C:\Users\yluo\Desktop\CodingDojo\Csharp\movieapi\obj\Debug\netcoreapp2.0\movieapi.AssemblyInfo.cs
+C:\Users\yluo\Desktop\CodingDojo\Csharp\movieapi\obj\Debug\netcoreapp2.0\movieapi.dll
+C:\Users\yluo\Desktop\CodingDojo\Csharp\movieapi\obj\Debug\netcoreapp2.0\movieapi.pdb
