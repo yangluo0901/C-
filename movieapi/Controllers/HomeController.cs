@@ -34,7 +34,7 @@ namespace movieapi.Controllers
             string save_query = $@"INSERT INTO history (name,rate,released_date,created_at)
                                 VALUES ('{instance.Name}','{instance.Rate}','{instance.Released_date}',NOW())";
             DbConnector.Execute(save_query);
-            return View("Index");
+            return RedirectToAction("Index");
         }
     }   
 }
