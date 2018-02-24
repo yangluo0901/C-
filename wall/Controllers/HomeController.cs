@@ -67,7 +67,10 @@ namespace wall.Controllers
         [HttpGet("wall/{user_id}")]
         public IActionResult Wall(int user_id)
         {
-
+            if (HttpContext.Session.GetInt32("log_id") == null)
+            {
+                return RedirectToAction("Index");
+            }
             string messages_query = $@"SELECT first_name, last_name, content, messages.id AS message_id, messages.created_at
                                 From messages JOIN users ON users.id = messages.poster_id
                                 ORDER BY messages.created_at DESC

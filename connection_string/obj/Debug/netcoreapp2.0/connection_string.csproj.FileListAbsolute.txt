@@ -1,0 +1,10 @@
+C:\Users\yluo\Desktop\CodingDojo\Csharp\connection_string\bin\Debug\netcoreapp2.0\connection_string.deps.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\connection_string\bin\Debug\netcoreapp2.0\connection_string.runtimeconfig.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\connection_string\bin\Debug\netcoreapp2.0\connection_string.runtimeconfig.dev.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\connection_string\bin\Debug\netcoreapp2.0\connection_string.dll
+C:\Users\yluo\Desktop\CodingDojo\Csharp\connection_string\bin\Debug\netcoreapp2.0\connection_string.pdb
+C:\Users\yluo\Desktop\CodingDojo\Csharp\connection_string\obj\Debug\netcoreapp2.0\connection_string.csproj.CoreCompileInputs.cache
+C:\Users\yluo\Desktop\CodingDojo\Csharp\connection_string\obj\Debug\netcoreapp2.0\connection_string.AssemblyInfoInputs.cache
+C:\Users\yluo\Desktop\CodingDojo\Csharp\connection_string\obj\Debug\netcoreapp2.0\connection_string.AssemblyInfo.cs
+C:\Users\yluo\Desktop\CodingDojo\Csharp\connection_string\obj\Debug\netcoreapp2.0\connection_string.dll
+C:\Users\yluo\Desktop\CodingDojo\Csharp\connection_string\obj\Debug\netcoreapp2.0\connection_string.pdb
