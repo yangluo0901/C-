@@ -12,15 +12,44 @@ namespace connection_string.Controllers
     public class HomeController : Controller
     {
         private DbConnector _dbconnector;
-        public HomeController(DbConnector dbconnector)
+        private UserFactory _userFactory;
+        public HomeController(DbConnector dbconnector , UserFactory userFactory)
         {
             _dbconnector = dbconnector;
+            _userFactory = userFactory;
         }
         [HttpGet("")]
         public IActionResult Index()
         {
-            ViewBag.results = _dbconnector.Query("SELECT * From users");
+            
+            var userDapper = _userFactory.GetUsers();
+            ViewBag.results = userDapper;
             return View();
+        }
+
+        [HttpGet("/getbyid/{id}")]
+        public IActionResult GetUserId(int id)
+        {
+            
+            var userDapper = _userFactory.GetUserById(id); // Good thing is you can get an object instead just List<Dictionary<string,object>>!!!
+            ViewBag.results = userDapper;
+            return View("Index",userDapper);
+        }
+
+        [HttpPost("/register")]
+        public IActionResult Register(User user)
+        {
+            if(!_userFactory.EmailIfExist(user))
+            {
+                ModelState.AddModelError("email","This e-mail has already exist !");
+            }
+            if(ModelState.IsValid)
+            {
+                _userFactory.CreateUser(user);
+            }
+            
+            Console.WriteLine("i am here");
+            return View("Index",user);
         }
     }
         

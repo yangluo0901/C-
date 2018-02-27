@@ -27,6 +27,7 @@ namespace connection_string
         {
             services.Configure<MySqlOptions>(Configuration.GetSection("DBInfo"));
             services.AddScoped<DbConnector>();
+            services.AddScoped<UserFactory>();
             services.AddSession(); 
             services.AddMvc();
         }
