@@ -1,0 +1,21 @@
+@model Trail
+<h1>@Model.name</h1>
+<h4>Description</h4>
+<p>@Model.description</p>
+<h4>Trail Length</h4>
+<p>@Model.length Miles</p>
+<h4>Elevation Change</h4>
+<p>@Model.elevation  feet</p>
+<div id="map" style="width:400px;height:400px;background:yellow"></div>
+
+<script>
+    function myMap() {
+    var mapCanvas = document.getElementById("map");
+    var mapOptions = {
+        center: new google.maps.LatLng(51.5, -0.2), zoom: 10
+    };
+    var map = new google.maps.Map(mapCanvas, mapOptions);
+    }
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7W-f__vu7qAxI8rTYIc2jU_uz95iOBlA&callback=myMap"></script>

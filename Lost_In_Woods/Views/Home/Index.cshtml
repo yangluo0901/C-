@@ -1,0 +1,69 @@
+﻿@model Trail
+@{
+    ViewData["Title"] = "Home Page";
+    
+}
+<h1>Lost In the Woods</h1><p>List of local hiking trails</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Trail Name</th>
+            <th>Trail Length</th>
+            <th>Elevation Change</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var trail in @ViewBag.trails)
+        {
+            <tr>
+                 <td><a href="/trail/@trail.id">@trail.name</a></td>
+                 <td>@trail.length</td>
+                 <td>@trail.elevation</td>
+            </tr>
+        }
+        
+    </tbody>
+</table>
+<br>
+<br>
+<br>
+<hr>
+<form class="form-horizontal" action="/add_trail" method="post">
+      <div class="form-group">
+        <span asp-validation-for="@Model.name"></span>
+        <label class="col-sm-2 control-label" for="name">Name</label>
+        <div class="col-sm-5">
+          <input type="text" name="name" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <span asp-validation-for="@Model.length"></span>
+        <label class="col-sm-2 control-label" for="length">length</label>
+        <div class="col-sm-5">
+          <input type="text" name="length" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <span asp-validation-for="@Model.elevation"></span>
+        <label class="col-sm-2 control-label" for="email">elevation</label>
+        <div class="col-sm-5">
+          <input type="text" name="elevation" >
+        </div>
+      </div>
+      <div class="form-group">
+        <span asp-validation-for="@Model.description"></span>
+        <label class="col-sm-2 control-label" for="description">description</label>
+        <div class="col-sm-10">
+          <textarea cols="25" rows="4" name="description" ></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-3 col-sm-offset-5">
+          <input type="submit" class="btn-success" value="Add a Trail" >
+        </div>
+      </div>
+</form>
+

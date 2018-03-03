@@ -1,0 +1,62 @@
+
+@model Ninja
+<div class="container">
+    <div class="col-md-6">
+        <h1 class="text-center">Registerred Ninjas</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Ninja Name</th>
+                    <th>Home Dojo</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach( var ninja in ViewBag.ninjas)
+                {
+                    <tr>
+                        <td><a href = "ninja/@ninja.ninja_id">@ninja.name</a></td>
+                        <td><a href = "dojo/@ninja.dojo.dojo_id">@ninja.dojo.name</a></td>
+                    </tr>
+                }
+                
+            </tbody>
+        </table>
+      
+    </div>
+    <div class="col-md-6">
+        <h1>Register a Ninja</h1>
+        <br>
+        <form class="form-vertical" action="/add_ninja" method="POST">
+            <div class="form-group">
+                <span asp-validation-for="@Model.name"></span>
+                <label for="name">Ninja Name</label>
+                <input type="text" class="form-control" name="name">
+            </div>
+            <div class="form-group">
+                <span asp-validation-for="@Model.level"></span>
+                <label for="level">Ninja Level</label>
+                <input type="number" class="form-control" name="level" min="1" max="10">    
+            </div>
+            <div class="form-group">
+                <span asp-validation-for="@Model.dojo_id"></span>
+                <label for="dojo_id">Assigned Dojo</label>
+                <select class="form-contorl" name="dojo_id">
+                @foreach(var dojo in ViewBag.Dojos)
+                {
+                    <option value="@dojo.dojo_id">@dojo.name</option>
+                }
+            </div>
+            <div class="form-group">
+                <span asp-validation-for="@Model.description"></span>
+                <label for="description">Optional Description</label>
+                <textarea class="form-control" name="description" cols="12" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <div class="col-md-4 col-md-offset-10">
+                    <input class="btn btn-success" type="submit" value="Sumit">
+                </div>
+                
+            </div>  
+        </form>
+    </div>
+</div>

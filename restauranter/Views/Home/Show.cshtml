@@ -1,0 +1,10 @@
+@model List<View>
+
+@foreach( var view in Model)
+{
+    <p><strong>Review for</strong>   @view.rest_name</p>
+    <p><strong>Reviewer:</strong>   @view.user_name    @view.created_at</p>
+    <p>@view.content</p>
+    <hr>
+
+}

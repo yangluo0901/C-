@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+<form action="/test" method="post">
+    <label>
+        test <input type="tetxt">
+    </label>
+</form>
+<form class="form-horizontal" action="/create" method="post">
+        <div class="form-group">
+            
+            <label class="col-sm-2 control-label" for="first_name">First Name</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" name="first_name">
+            </div>
+        </div>
+</form>

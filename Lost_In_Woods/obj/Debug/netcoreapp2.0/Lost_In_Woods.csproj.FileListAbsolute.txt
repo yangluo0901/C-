@@ -1,0 +1,10 @@
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Lost_In_Woods\bin\Debug\netcoreapp2.0\Lost_In_Woods.deps.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Lost_In_Woods\bin\Debug\netcoreapp2.0\Lost_In_Woods.runtimeconfig.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Lost_In_Woods\bin\Debug\netcoreapp2.0\Lost_In_Woods.runtimeconfig.dev.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Lost_In_Woods\bin\Debug\netcoreapp2.0\Lost_In_Woods.dll
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Lost_In_Woods\bin\Debug\netcoreapp2.0\Lost_In_Woods.pdb
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Lost_In_Woods\obj\Debug\netcoreapp2.0\Lost_In_Woods.csproj.CoreCompileInputs.cache
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Lost_In_Woods\obj\Debug\netcoreapp2.0\Lost_In_Woods.AssemblyInfoInputs.cache
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Lost_In_Woods\obj\Debug\netcoreapp2.0\Lost_In_Woods.AssemblyInfo.cs
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Lost_In_Woods\obj\Debug\netcoreapp2.0\Lost_In_Woods.dll
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Lost_In_Woods\obj\Debug\netcoreapp2.0\Lost_In_Woods.pdb

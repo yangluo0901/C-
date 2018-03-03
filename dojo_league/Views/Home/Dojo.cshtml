@@ -1,0 +1,22 @@
+<h2><strong>Name:</strong>@ViewBag.dojo.name</h2>
+<p>dojo location: @ViewBag.dojo.location</p>
+<p>Information: @ViewBag.dojo.info</p>
+    <h2>Current Memebers:</h2>  
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Ninja</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var entry in @ViewBag.dojo.ninjas)
+            {
+                <tr>
+                    <td><a href="/ninja/@entry.ninja_id">@entry.name</a></td>
+                    <td>Banish!</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
