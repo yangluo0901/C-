@@ -65,7 +65,7 @@ namespace Bank.Controllers
                     if(hasher.VerifyHashedPassword(vuser,checkemail.password,vuser.password) != PasswordVerificationResult.Failed)
                     {
                          HttpContext.Session.SetInt32("log_id",checkemail.user_id);
-                         return View("Account", new{id = checkemail.user_id});
+                         return RedirectToAction("Account", new{id = checkemail.user_id});
                     }
                     else
                     {
@@ -83,10 +83,21 @@ namespace Bank.Controllers
             return View("Login",vuser);
         }
         [HttpGet("acount/{id}")]
-        public IActionResult Acount(int id)
+        public IActionResult Account(int id)
         {
-            ViewBag.id = id;
-            return View();
+            if (HttpContext.Session.GetInt32("log_id") != null)
+            {
+                ViewBag.id = id;
+                return View();
+            }
+            
+            return RedirectToAction("Index");
+        }
+        [HttpGet("/logout")]
+        public IActionResult Logout(int id)
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Index");
         }
     }
 }

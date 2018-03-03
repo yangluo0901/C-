@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 namespace Bank.Models
 {
-    public class VGPerson
+    public class VGPerson // for register
     {
         [Required]
         [MinLength(2)]
