@@ -7,15 +7,21 @@ using Microsoft.AspNetCore.Mvc;
 using Bank.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
 namespace Bank.Controllers
 {
     public class HomeController : Controller
     {
         private BankContext _bcontext;
+        // private Person _loggineduser
+        // {
+        //     get{ return _bcontext.users.SingleOrDefault(u=> u.user_id == (int?)HttpContext.Session.GetInt32("log_id") );}
+        // }
         public HomeController(BankContext bcontext)
         {
             _bcontext = bcontext;
+            // Console.WriteLine($"loged user is {(int?)HttpContext.Session.GetInt32("log_id")}");
         }
         
         [HttpGet("")]
@@ -82,16 +88,32 @@ namespace Bank.Controllers
             }
             return View("Login",vuser);
         }
-        [HttpGet("acount/{id}")]
+        [HttpGet("account/{id}")]
         public IActionResult Account(int id)
         {
             if (HttpContext.Session.GetInt32("log_id") != null)
             {
-                ViewBag.id = id;
-                return View();
+                AccountModel model = new AccountModel()
+                {
+                    user = _bcontext.users.Include(u=>u.actions).SingleOrDefault(user => user.user_id == id),
+                   
+                };
+                
+                return View(model);
             }
             
             return RedirectToAction("Index");
+        }
+        [HttpPost("account/action")]
+        public IActionResult CreateAction(AccountModel model)
+        {
+            int loggineduserid = (int)HttpContext.Session.GetInt32("log_id");
+            model.action.user_id = loggineduserid;
+            _bcontext.actions.Add(model.action);
+            Person updateuser = _bcontext.users.Include(u=>u.actions).SingleOrDefault(user => user.user_id == loggineduserid);
+            updateuser.balance =  updateuser.balance + model.action.amount;
+            _bcontext.SaveChanges();
+            return RedirectToAction("Account", new{id = loggineduserid});
         }
         [HttpGet("/logout")]
         public IActionResult Logout(int id)

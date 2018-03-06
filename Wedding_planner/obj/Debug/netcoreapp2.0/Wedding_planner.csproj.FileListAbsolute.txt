@@ -1,0 +1,10 @@
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Wedding_planner\bin\Debug\netcoreapp2.0\Wedding_planner.deps.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Wedding_planner\bin\Debug\netcoreapp2.0\Wedding_planner.runtimeconfig.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Wedding_planner\bin\Debug\netcoreapp2.0\Wedding_planner.runtimeconfig.dev.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Wedding_planner\bin\Debug\netcoreapp2.0\Wedding_planner.dll
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Wedding_planner\bin\Debug\netcoreapp2.0\Wedding_planner.pdb
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Wedding_planner\obj\Debug\netcoreapp2.0\Wedding_planner.csproj.CoreCompileInputs.cache
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Wedding_planner\obj\Debug\netcoreapp2.0\Wedding_planner.AssemblyInfoInputs.cache
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Wedding_planner\obj\Debug\netcoreapp2.0\Wedding_planner.AssemblyInfo.cs
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Wedding_planner\obj\Debug\netcoreapp2.0\Wedding_planner.dll
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Wedding_planner\obj\Debug\netcoreapp2.0\Wedding_planner.pdb

@@ -1,0 +1,47 @@
+@model List<Person>
+<div class="row">
+    <h1 class="col-sm-6">@ViewBag.loguser Welcome to Wedding Planner !</h1>
+    <a class="col-sm-2" href="/logout">Logout</a>
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Wedding</th>
+            <th>Date</th>
+            <th>Guest</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var wedding in Model)
+        {
+            <tr>
+                <td>
+                   @wedder_one - @wedder_two
+                </td>
+                <td>@wedding.date.ToString("D")</td>
+                <td>@wedding.guests.Count()</td>
+                <td>
+                   @{
+                       if(wedding.holder_id != ViewBag.logid)
+                       {
+                            if(wedding.guests.Where(g=>g.attendantee.id==ViewBag.logid).SingleOrDefault() ==null)
+                            {
+                                <a href="">RSVP</a>;
+                            }
+                           else
+                           {
+                               <a href="">UNRSVP</a>;
+                           }
+                        }
+                       else
+                       {
+                          <a href="">Delete</a> ;
+                       }
+                   }
+                </td>
+            </tr>
+        }
+        
+    </tbody>
+</table>

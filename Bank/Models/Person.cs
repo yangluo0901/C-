@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 namespace Bank.Models
 {
@@ -13,5 +14,13 @@ namespace Bank.Models
         public string email{get;set;}
     
         public string password{get;set;}
+
+        public int balance {get;set;}
+
+        public List<Action> actions {get;set;}
+
+        public Person(){
+            List<Action> actions =  new List<Action>();
+        }
     }
 }
