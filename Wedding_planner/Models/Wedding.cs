@@ -12,6 +12,7 @@ namespace Wedding_planner.Models
         public Person holder {get;set;}
         public string wedder_one {get;set;}
         public string wedder_two {get;set;}
+        public string address {get;set;}
         
         public List<Join> guests {get;set;}
         public DateTime date {get;set;}

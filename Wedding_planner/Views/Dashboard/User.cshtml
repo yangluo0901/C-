@@ -1,0 +1,19 @@
+@model Person
+<div class="container">
+    <div class="row">
+        <h1 class="col-sm-4">@Model.first_name 's Profile</h1>
+        <a class="col-sm-2" href="/Dashboard/@ViewBag.logid">Dashboard</a>
+        <a class="col-sm-2" href="/logout">Logout</a>
+    </div>
+    <p>First Name                @Modle.first_name</p>
+    <p>Last Name                 @Modle.last_name</p>
+    <p>E-mail                    @Modle.email</p>
+    <p>Joined Weddings:</p>>
+    <ul class="list-group">
+            @foreach(var jonwedding in Model.joinweddings)
+            {
+                <a href="wedding/@joinwedding.wedding_id" class="list-group-item">@joinwedding.wedder_one @joinwedding.wedder_two</a>
+            }
+            
+        </ul>
+</div>

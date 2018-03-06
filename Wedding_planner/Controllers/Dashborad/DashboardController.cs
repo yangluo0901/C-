@@ -38,5 +38,70 @@ namespace Wedding_planner.Controllers
             }
             return RedirectToAction("Dashboard");
         }
+        [HttpGet("rsvp/{wedding_id}")]
+        public IActionResult RSVP(int wedding_id)
+        {
+            if(_loggedinuser != null)
+            {
+                Join join = new Join()
+                {
+                    wedding_id = wedding_id,
+                    attendantee_id  = _loggedinuser.user_id
+                };
+                _wcontext.Add(join);
+                _wcontext.SaveChanges();
+                return RedirectToAction("Dashboard", new{ id = _loggedinuser.user_id});
+            }
+            return RedirectToAction("Home","LogReg");
+        }
+        [HttpGet("unrsvp/{wedding_id}")]
+        public IActionResult UNRSVP(int wedding_id)
+        {
+            if(_loggedinuser != null)
+            {
+                Join join = _wcontext.joins.SingleOrDefault(j=>(j.wedding_id == wedding_id)&&(j.attendantee_id==_loggedinuser.user_id));
+
+                _wcontext.Remove(join);
+                _wcontext.SaveChanges();
+                return RedirectToAction("Dashboard", new{ id = _loggedinuser.user_id});
+            }
+            return RedirectToAction("Home","LogReg");
+        }
+        [HttpGet("new_wedding")]
+        public IActionResult NewWedding()
+        {
+            ViewBag.logid = _loggedinuser.user_id;
+            return View();
+        }
+        [HttpPost("/create_wedding")]
+        public IActionResult CreateWedding(Wedding wedding)
+        {
+            if(_loggedinuser != null)
+            {
+                if ( ModelState.IsValid)
+                {
+                    _wcontext.Add(wedding);
+                    _wcontext.SaveChanges();
+                    return RedirectToAction("Wedding",new{ id = _loggedinuser.user_id});
+                }
+            }
+            return RedirectToAction("NewWedding");
+        }
+        [HttpGet("wedding/{wedding_id}")]
+        public IActionResult Wedding( int id)
+        {
+            var wedding = _wcontext.weddings.Include(w => w.guests)
+                                            .SingleOrDefault(w => w.wedding_id == id);
+            ViewBag.logid = _loggedinuser.user_id;
+            return View(wedding);
+        }
+        [HttpGet("user/{id}")]
+        public IActionResult User(int id)
+        {
+            Person user = _wcontext.users.Include(u => u.joinweddings)
+                                        .SingleOrDefault(u => u.user_id == id);
+            ViewBag.logid = _loggedinuser.user_id;
+            return View();
+        }
     }
 }
