@@ -8,11 +8,12 @@ namespace Wedding_planner.Models
     {
         [Key]
         public int wedding_id {get;set;}
-        public int holder_id {get;set;}
-        public Person holder {get;set;}
+        
         public string wedder_one {get;set;}
         public string wedder_two {get;set;}
         public string address {get;set;}
+        public int holderid {get;set;}
+        public Person holder {get;set;}
         
         public List<Join> guests {get;set;}
         public DateTime date {get;set;}

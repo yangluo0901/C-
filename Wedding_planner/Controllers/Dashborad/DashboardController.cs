@@ -30,8 +30,8 @@ namespace Wedding_planner.Controllers
                 ViewBag.loguser = _loggedinuser.first_name;
                 Person user = _wcontext.users.SingleOrDefault(u=>u.user_id ==5);
                 List<Wedding> weddings = _wcontext.weddings.Include(w=>w.holder)
-                                                            .Include(w=>w.guests)
-                                                                .ThenInclude(g=>g.attendantee).ToList();
+                                                            .Include(w => w.guests)
+                                                                .ThenInclude(g => g.attendantee).ToList();
                 // var wedding = _wcontext.weddings.SingleOrDefault(w=>w.wedding_id == 1);
                 ViewBag.logid = _loggedinuser.user_id;
                 return View(weddings);
@@ -46,7 +46,7 @@ namespace Wedding_planner.Controllers
                 Join join = new Join()
                 {
                     wedding_id = wedding_id,
-                    attendantee_id  = _loggedinuser.user_id
+                    joiner_id  = _loggedinuser.user_id
                 };
                 _wcontext.Add(join);
                 _wcontext.SaveChanges();
@@ -59,7 +59,7 @@ namespace Wedding_planner.Controllers
         {
             if(_loggedinuser != null)
             {
-                Join join = _wcontext.joins.SingleOrDefault(j=>(j.wedding_id == wedding_id)&&(j.attendantee_id==_loggedinuser.user_id));
+                Join join = _wcontext.joins.SingleOrDefault(j=>(j.wedding_id == wedding_id)&&(j.join_id==_loggedinuser.user_id));
 
                 _wcontext.Remove(join);
                 _wcontext.SaveChanges();
@@ -80,19 +80,23 @@ namespace Wedding_planner.Controllers
             {
                 if ( ModelState.IsValid)
                 {
+                    wedding.holderid = _loggedinuser.user_id;
                     _wcontext.Add(wedding);
                     _wcontext.SaveChanges();
-                    return RedirectToAction("Wedding",new{ id = _loggedinuser.user_id});
+                    return RedirectToAction("Wedding",new{ wedding_id = _loggedinuser.user_id});
                 }
             }
-            return RedirectToAction("NewWedding");
+            return RedirectToAction("NewWedding", wedding);
         }
         [HttpGet("wedding/{wedding_id}")]
-        public IActionResult Wedding( int id)
+        public IActionResult Wedding( int wedding_id)
         {
+            Console.WriteLine(" i am insdie wedding function");
             var wedding = _wcontext.weddings.Include(w => w.guests)
-                                            .SingleOrDefault(w => w.wedding_id == id);
+                                            .SingleOrDefault(w => w.wedding_id == wedding_id);
             ViewBag.logid = _loggedinuser.user_id;
+            Console.WriteLine("i am going to pass wedding to cshtml ");
+            Console.WriteLine(wedding);
             return View(wedding);
         }
         [HttpGet("user/{id}")]

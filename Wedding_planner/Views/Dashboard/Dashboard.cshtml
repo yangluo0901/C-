@@ -1,4 +1,4 @@
-@model List<Person>
+@model List<Wedding>
 <div class="row">
     <h1 class="col-sm-6">@ViewBag.loguser Welcome to Wedding Planner !</h1>
     <a class="col-sm-2" href="/logout">Logout</a>
@@ -17,15 +17,15 @@
         {
             <tr>
                 <td>
-                   @wedder_one - @wedder_two
+                   <a href="/wedding/@wedding.wedding_id">@wedding.wedder_one & @wedding.wedder_two</a>
                 </td>
                 <td>@wedding.date.ToString("D")</td>
                 <td>@wedding.guests.Count()</td>
                 <td>
                    @{
-                       if(wedding.holder_id != ViewBag.logid)
+                       if(wedding.holderid != ViewBag.logid)
                        {
-                            if(wedding.guests.Where(g=>g.attendantee.id==ViewBag.logid).SingleOrDefault() ==null)
+                            if(wedding.guests.Where(g=>g.join_id==ViewBag.logid).SingleOrDefault() ==null)
                             {
                                 <a href="/rsvp/@wedding.wedding_id">RSVP</a>;
                             }
@@ -46,5 +46,5 @@
     </tbody>
 </table>
 <div class="row col-sm-3 col-sm-offset-6">
-    <a href="/new_wedding/@ViewBag.logid"><button class="btn btn-primary">New Wedding</button></a>
+    <a href="/new_wedding"><button class="btn btn-primary">New Wedding</button></a>
 </div>
