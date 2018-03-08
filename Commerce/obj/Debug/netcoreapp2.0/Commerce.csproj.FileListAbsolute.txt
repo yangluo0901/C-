@@ -1,0 +1,10 @@
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Commerce\bin\Debug\netcoreapp2.0\Commerce.deps.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Commerce\bin\Debug\netcoreapp2.0\Commerce.runtimeconfig.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Commerce\bin\Debug\netcoreapp2.0\Commerce.runtimeconfig.dev.json
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Commerce\bin\Debug\netcoreapp2.0\Commerce.dll
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Commerce\bin\Debug\netcoreapp2.0\Commerce.pdb
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Commerce\obj\Debug\netcoreapp2.0\Commerce.csproj.CoreCompileInputs.cache
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Commerce\obj\Debug\netcoreapp2.0\Commerce.AssemblyInfoInputs.cache
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Commerce\obj\Debug\netcoreapp2.0\Commerce.AssemblyInfo.cs
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Commerce\obj\Debug\netcoreapp2.0\Commerce.dll
+C:\Users\yluo\Desktop\CodingDojo\Csharp\Commerce\obj\Debug\netcoreapp2.0\Commerce.pdb

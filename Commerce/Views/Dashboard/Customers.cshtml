@@ -1,0 +1,56 @@
+@model DashboardModel
+<div class="container">
+    <div class="row">
+        <strong><u>Add a new customer </u></strong>
+        <form class="form-horizontal" action="/customer/add" method="post">
+            <div class="form-group">
+                <span asp-validation-for="customer.first_name"></span>
+                <label class="col-sm-4 control-label" asp-for="customer.first_name"></label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="customer.first_name">
+                </div>
+            </div>
+            <div class="form-group">
+                <span asp-validation-for="customer.last_name"></span>
+                <label class="control-label col-sm-4" asp-for="customer.last_name"></label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" asp-for="customer.last_name">
+                </div>
+            </div>
+            <div class="form-group">
+                <span asp-validation-for="customer.email"></span>
+                <label class="control-label col-sm-4" asp-for="customer.email"></label>
+                <div class="col-sm-6">
+                    <input type="email" class="form-control" asp-for="customer.email">
+                </div>
+            </div>
+            <div class="form-group">
+                <span asp-validation-for="customer.password"></span>
+                <label class="control-label col-sm-4" asp-for="customer.password"></label>
+                <div class="col-sm-6">
+                    <input type="password" class="form-control" asp-for="customer.password">
+                </div>
+            </div>
+    </div>
+    <div class="row">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Customer Name</th>
+                    <th>Created Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var customer in Model.customers)
+                {
+                    <tr>
+                        <td>@customer.first_name  @customer.lasst_name</td>
+                        <td>@String.Format("{MMMM d YYYY}",customer.created_at)</td>
+                        <td><a href="/customer/remove"><button class="btn btn-warning">Remove</button></a></td>                        
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>  

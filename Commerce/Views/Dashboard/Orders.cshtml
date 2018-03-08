@@ -1,0 +1,56 @@
+@model DashboardModel
+<div class="container">
+    <div class="row">
+        <strong><u>Add a new order </u></strong>
+        <form action="/order/add" method="post">
+            <div class="form-group">
+                <label for="order.customer_id">Customer</label>
+                <Select class="form-control" name="order.customer_id">
+                    @foreach(var customer in Model.customers)
+                    {
+                        <option value="@customer.user_id">@customer.first_name @customer.last_name</option>
+                    }
+            </div>
+            <div class="form-group">
+                <label for="order.quantity">Quantity</label>
+                <input type="number" class="form-control" name="order.quantity">
+            </div>
+            <div class="form-group">
+                <label for="order.product_id">Product</label>
+                 <Select class="form-control" name="order.product_id">
+                    @foreach(var product in Model.products)
+                    {
+                        <option value="@product.product_id">@product.name</option>
+                    }
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-8">
+                    <input type="submit" class="btn btn-primary" value="Order">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Customer Name</th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var order in Model.orders)
+                {
+                    <tr>
+                        <td>@order.customer.first_name  @order.customer.first_name</td>
+                        <td>@order.product.name</td>
+                        <td>@order.quantity</td>
+                        <td>@String.Format("{MMMM d YYYY}",order.created_at)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+@model DashboardModel
+
+<div class="row products">
+    @{
+        var count = 4;
+        for(int i = 1; i < count; i++)
+        {
+            if(i%4 == 0)
+            {
+                <a href="#" class="col-sm-3">@Model.products[i-1]</a>\n
+            }
+            <a href="#" class="col-sm-3">@Model.products[i-1]</a>
+        }
+    }
+    <a href="#" id="product_show">Show More</a>
+</div>
+<br>
+<div class="row orders">
+    <h2><u>Recent Orders</u></h2>
+    @for(int i = 0; i<3;i++ )
+    {
+       var temp =  @Model.orders[i]
+       <p>@temp.customer.first_name  purchased  @temp.product.quantity  @temp.product.name</p>
+    }
+    <a href="#" class="order_show">Show all orders</a>
+</div>
+<div class="row new_customers">
+    <h2><u>New Customers</u></h2>
+    @for(int i = 0; i < 3; i++)
+    {
+        var temp =  @Model.customers[i]
+        if ( temp.products.Count() == 0)
+        {
+            <p>@temp.first_name joined the store</p>
+        }
+        else
+        {
+            <p>@temp.first_name purchased @temp.products[0].quantity  @temp.products[0].proudct.name</p>
+        }
+        
+    }
+
+</div>

@@ -1,0 +1,73 @@
+@model RegLogModel
+<div class="container-fluid">
+        <div class="col-sm-6">
+            <h1>Register</h1>
+        <form class="form-horizontal" action="/register" method="post">
+            <div class="form-group">
+                <span asp-validation-for="reguser.first_name"></span>
+                <label class="col-sm-4 control-label" asp-for="reguser.first_name"></label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="reguser.first_name">
+                </div>
+            </div>
+            <div class="form-group">
+                <span asp-validation-for="reguser.last_name"></span>
+                <label class="control-label col-sm-4" asp-for="reguser.last_name"></label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" asp-for="reguser.last_name">
+                </div>
+            </div>
+            <div class="form-group">
+                <span asp-validation-for="reguser.email"></span>
+                <label class="control-label col-sm-4" asp-for="reguser.email"></label>
+                <div class="col-sm-6">
+                    <input type="email" class="form-control" asp-for="reguser.email">
+                </div>
+            </div>
+            <div class="form-group">
+                <span asp-validation-for="reguser.password"></span>
+                <label class="control-label col-sm-4" asp-for="reguser.password"></label>
+                <div class="col-sm-6">
+                    <input type="password" class="form-control" asp-for="reguser.password">
+                </div>
+            </div>
+            <div class="form-group">
+                <span asp-validation-for="reguser.confirm"></span>
+                <label class="control-label col-sm-4" asp-for="reguser.confirm"></label>
+                <div class="col-sm-6">
+                    <input type="password" class="form-control" asp-for="reguser.confirm">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-8">
+                    <input class="btn btn-primary" type="submit" value="Register">  
+                </div>
+            </div>
+        </form>
+        <strong>@TempData["reg"]</strong>
+    </div>
+    <div class="col-sm-6">
+        <h1>Login</h1>
+        <form class="form-horizontal" action="/login" method="post">
+            <div class="form-group">
+                <span asp-validation-for="loguser.email"></span>
+                <label class="col-sm-4 control-label" asp-for="loguser.email"></label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" asp-for="loguser.email">
+                </div>
+            </div>
+            <div class="form-group">
+                <span asp-validation-for="loguser.password"></span>
+                <label class="col-sm-4 control-label" asp-for="loguser.password"></label>
+                <div class="col-sm-6">
+                    <input type="password" class="form-control" asp-for="loguser.password">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2 col-sm-offset-8">
+                    <input type="submit" class="btn btn-primary" value="Login">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
