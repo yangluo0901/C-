@@ -1,43 +1,79 @@
 @model DashboardModel
 
 <div class="row products">
-    @{
-        var count = 4;
-        for(int i = 1; i < count; i++)
+   
+        @for(int i = 1; i <= Model.products.Count ;i++)
         {
             if(i%4 == 0)
             {
-                <a href="#" class="col-sm-3">@Model.products[i-1]</a>\n
+                <a style="display:none" class="products_hidden col-sm-3" href="#" >@Model.products[i-1].name</a><br><br>
             }
-            <a href="#" class="col-sm-3">@Model.products[i-1]</a>
+            else{
+                <a style="display:none" class="products_hidden col-sm-3" href="#" >@Model.products[i-1].name</a>
+            }
+           
+            
         }
-    }
-    <a href="#" id="product_show">Show More</a>
+   <br>
+    <div class="text-center">
+        <a href="#" id="product_show"><u>Show More ...</u></a>
+    </div>
 </div>
 <br>
 <div class="row orders">
     <h2><u>Recent Orders</u></h2>
-    @for(int i = 0; i<3;i++ )
+    @for(int i = 0; i<Model.orders.Count;i++ )
     {
-       var temp =  @Model.orders[i]
-       <p>@temp.customer.first_name  purchased  @temp.product.quantity  @temp.product.name</p>
+        var temp = Model.orders[i];
+        <p style="display:none" class="orders_hidden">@temp.customer.first_name  purchased  @temp.product.quantity  @temp.product.name</p>
+     
     }
-    <a href="#" class="order_show">Show all orders</a>
+    <div class="text-center">
+        <a href="#" class="order_show"><u>Show all orders ...</u></a>
+    </div>
+    
 </div>
 <div class="row new_customers">
-    <h2><u>New Customers</u></h2>
-    @for(int i = 0; i < 3; i++)
+    <h2><u>New Customers</u></h2> 
+    @for(int i = 0; i < Model.customers.Count; i++)
     {
-        var temp =  @Model.customers[i]
-        if ( temp.products.Count() == 0)
+        
+        var temp = Model.customers[i];
+        if(temp.products.Count != 0)
         {
-            <p>@temp.first_name joined the store</p>
+            <p style="display:none" class="customers_hidden"> @temp.first_name purchased @temp.products[0].quantity  @temp.products[0].product.name</p>
         }
         else
         {
-            <p>@temp.first_name purchased @temp.products[0].quantity  @temp.products[0].proudct.name</p>
-        }
-        
+            <p style="display:none" class="customers_hidden"> @temp.first_name joined store   @temp.created_at </p>
+        }  
+       
     }
-
+    <div class="text-center">
+        <a href="#" class="customer_show"><u>Show all customers ...</u></a>
+    </div>
 </div>
+<script>
+    $(document).ready(function(){
+        $(".products_hidden").slice(0,4).show();
+        $(".orders_hidden").slice(0,3).show();
+        $(".customers_hidden").slice(0,3).show();
+        $("#product_show").click(function(e){
+            Show(".products_hidden:hidden", 4);
+        });
+        $("#order_show").click(function(e){
+            Show(".orders_hidden:hidden", 3);
+        });
+        $("#customer_show").click(function(e){
+            Show(".customers_hidden:hidden", 3);
+        });
+
+
+        function Show( str, num)
+        {
+            $(str).slice(0,num).show();
+        }
+    });
+    
+</script>
+

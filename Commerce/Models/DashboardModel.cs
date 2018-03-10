@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Http;
 
 namespace Commerce.Models
 {
@@ -9,7 +10,8 @@ namespace Commerce.Models
         public List<Order> orders {get;set;}
         public Product product{get;set;}
         public Order order {get;set;}
-        public Customer customer {get;set;}
+        public RegUser customer {get;set;}
+        public IFormFile images {get;set;}
         
     }
 }

@@ -8,7 +8,7 @@
                 <Select class="form-control" name="order.customer_id">
                     @foreach(var customer in Model.customers)
                     {
-                        <option value="@customer.user_id">@customer.first_name @customer.last_name</option>
+                        <option value="@customer.customer_id">@customer.first_name @customer.last_name</option>
                     }
             </div>
             <div class="form-group">
@@ -44,10 +44,10 @@
                 @foreach(var order in Model.orders)
                 {
                     <tr>
-                        <td>@order.customer.first_name  @order.customer.first_name</td>
+                        <td>@order.customer.first_name  @order.customer.last_name</td>
                         <td>@order.product.name</td>
                         <td>@order.quantity</td>
-                        <td>@String.Format("{MMMM d YYYY}",order.created_at)</td>
+                        <td>@String.Format("{0:MMMM d yyyy}",order.created_at)</td>
                     </tr>
                 }
             </tbody>

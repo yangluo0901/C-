@@ -1,42 +1,82 @@
 @model DashboardModel;
-
-<div class="container col-sm-4">
-    <strong><u>Add a new product</u></strong>
-    <form action="/product/add" method="post">
-        <div class="form-group">
-            <label asp-for="product.name"></label>
-            <input type="text" class="form-control" asp-for="product.name">
-        </div>
-        <div class="form-group">
-            <label asp-for="product.description"></label>
-            <textarea class="form-control" asp-for="product.description"></textarea>
-        </div>
-        <div class="form-group">
-            <label asp-for="product.quantity"></label>
-            <input type="number" class="form-control" asp-for="product.quantity">
-        </div>
-        <div class="form-group">
-            <label asp-for="product.price"></label>
-            <input type="number" class="form-control" asp-for="product.price">
-        </div>
-        <div class="form-group">
-            <div class="col-sm-offset-8">
-                 <input type="submit" class="btn btn-primary" value="create">
+<div class="container">
+    <div class="container col-sm-3">
+        <strong><u>Add a new product</u></strong>
+        <form action="/product/add" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label asp-for="product.name"></label>
+                <input type="text" class="form-control" asp-for="product.name">
             </div>
-        </div>
-    </form>
-</div>
-<div class="container col-sm-8">
-    @{
-        var counter = 1
-        foreach(var product in Model.products)
-        {
-            if(i%4 == 0)
-            {
-                <a href="#" class="col-sm-3">@Model.products[i-1]</a>\n
+            <div class="form-group">
+                <label asp-for="@Model.images"></label>
+                <input type="file" class="form-control" asp-for="@Model.images">
+            </div>
+            <div class="form-group">
+                <label asp-for="product.description"></label>
+                <textarea class="form-control" asp-for="product.description"></textarea>
+            </div>
+            <div class="form-group">
+                <label asp-for="product.quantity"></label>
+                <input type="number" class="form-control" asp-for="product.quantity">
+            </div>
+            <div class="form-group">
+                <label asp-for="product.price"></label>
+                <input type="number" step:"any" class="form-control" asp-for="product.price">
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-8">
+                    <input type="submit" class="btn btn-primary" value="create">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="container col-sm-9">
+        <div class="row">
+            @{
+                var counter = 1;
+                foreach(var product in Model.products)
+                {   
+                    
+                    if (product.images != null)
+                    {
+                        var base64 = Convert.ToBase64String(product.images);
+                        var imgsrc = $"data:image/gif;base64,{base64}";
+                        <div class="thumbnail col-sm-3">
+                        <a href="/product/@product.product_id" target="_blank">
+                            <img src="@imgsrc" alt="Lights" style="width:41px; height:55px;">
+                            <div class="caption ">
+                                <p class="text-center">@product.name</p>
+                            </div>
+                        </a>
+                    </div>
+                    }
+                    else
+                    {
+                        var imgsrc = "#";
+                        <div class="thumbnail col-sm-3">
+                        <a href="/product/@product.product_id" target="_blank">
+                            <img src="@imgsrc" alt="Lights" style="width:41px ;height:55px;">
+                            <div class="caption">
+                                <p class="text-center">@product.name</p>
+                            </div>
+                        </a>
+                    </div>
+                    }
+                    
+                    
+                    
+                    if(counter%4 == 0)
+                    {
+                        
+                        <br><br>
+                    }
+
+                }
             }
-            <a href="#" class="col-sm-3">@Model.products[i-1]</a>
-            counter += 1
-        }
-    }
+        </div>
+        <br>
+        <div class="text-center">
+            <a href="#" id="product_show"><u>Show More ...</u></a>
+        </div>
+    </div>
 </div>

@@ -7,19 +7,23 @@ using Microsoft.AspNetCore.Mvc;
 using Commerce.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
 
 namespace Commerce.Controllers
 {
-    public class DashboardContoller : Controller
+    public class DashboardController : Controller
     {
         private Customer _loggedin
         {
             get{return _ccontext.customers.SingleOrDefault(c => c.customer_id  == HttpContext.Session.GetInt32("log_id"));}
         }
+        private IHostingEnvironment _env;
         private CommerceContext _ccontext;
-        public DashboardContoller(CommerceContext ccontext)
+        public DashboardController(CommerceContext ccontext,IHostingEnvironment env)
         {
             _ccontext = ccontext;
+            _env = env;
         }
         [HttpGet("home")]
         public IActionResult Index()
@@ -38,7 +42,7 @@ namespace Commerce.Controllers
                 orders = orders,
                 customers = customers
             };
-            return View();
+            return View(model);
         }
         [HttpGet("products")]
         public IActionResult Products()
@@ -51,11 +55,20 @@ namespace Commerce.Controllers
             return View(model);
         }
         [HttpPost("product/add")]
-        public IActionResult AddProduct(DashboardModel model)
+        public async Task<IActionResult> AddProduct(DashboardModel model)
         {
             if (ModelState.IsValid)
             {
                 var check = _ccontext.products.SingleOrDefault(p => p.name == model.product.name);
+               
+            
+                using(var stream = new MemoryStream())
+                {
+                    await model.images.CopyToAsync(stream);
+                    model.product.images = stream.ToArray();
+                    
+                }
+                
                 //check if product exist, if yes, just update it
                 if( check == null)
                 {
@@ -69,11 +82,19 @@ namespace Commerce.Controllers
                     check.quantity = model.product.quantity;
                     check.price = model.product.price;
                     check.updated_at = DateTime.Now;
+                    check.images = model.product.images;
+                    // check.image = model.product.image;  
                     _ccontext.SaveChanges();
                 }
+                
                 return RedirectToAction("Products");
             }
-            return View("Products",model);
+            List<Product>products = _ccontext.products.ToList();
+             DashboardModel newmodel = new DashboardModel()
+            {
+                products = products,
+            };
+            return View("Products",newmodel);
         }
         [HttpGet("orders")]
         public IActionResult Orders()
@@ -114,27 +135,86 @@ namespace Commerce.Controllers
             };
             return View(model);
         }
-        [HttpPost("customers/add")]
+        [HttpPost("customer/add")]
         public IActionResult AddCustomer(DashboardModel model)
         {
-            if (_loggedin != null)
-            {
+            // if (_loggedin != null)
+            // {
                 if(ModelState.IsValid)
                 {
-                     Customer newcustomer = model.customer;
+                     Customer newcustomer = new Customer()
+                     {
+                        first_name = model.customer.first_name,
+                        last_name = model.customer.last_name,
+                        email = model.customer.email,
+                        password = model.customer.password
+                     };
                      _ccontext.Add(newcustomer);
                      _ccontext.SaveChanges();
+                     return RedirectToAction("Customers");
                 }
+                List<Customer>customers = _ccontext.customers.Include(c => c.products)
+                                                            .ThenInclude(p => p.product)
+                                                        .OrderByDescending(c => c.created_at).ToList();
+                DashboardModel newmodel = new DashboardModel()
+                {
+                    customers = customers,
+                    customer = model.customer
+                };
                
-                    return View("Customers",model);
+                return View("Customers",newmodel);
                 
-            }
-            else
-            {
-                return RedirectToAction("Home");
-            }
+            // }
+            // else
+            // {
+            //     return RedirectToAction("Home");
+            // }
+
+
             
         }
-       
+        
+        [HttpGet("test")]
+        public IActionResult Test()
+        {
+            return View();
+        }
+        
+        [HttpPost("test/image")]
+        public async Task<IActionResult> Post(DashboardModel model)
+        {
+           
+
+            // full path to file in temp location
+            string path = Path.Combine(_env.WebRootPath,"images");
+
+         
+              
+            using (var memoryStream = new MemoryStream())
+            {
+                await model.images.CopyToAsync(memoryStream);
+                var image = new Image()
+                {
+                    pic = memoryStream.ToArray(),
+                };
+                _ccontext.images.Add(image);
+                _ccontext.SaveChanges();
+            }
+
+
+            // process uploaded files
+            // Don't rely on or trust the FileName property without validation.
+
+            return Ok(new { count =  "great!!!!!!!!"});
+        }
+
+        [HttpGet("test/show/image")]
+        public IActionResult Show()
+        {
+            var image = _ccontext.images.SingleOrDefault(i => i.id == 1);
+            return View(image);
+        }
+            
     }
+            
 }

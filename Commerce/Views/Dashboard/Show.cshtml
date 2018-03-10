@@ -1,0 +1,9 @@
+@model Image
+<div class="container">
+    <h1>this is image</h1>
+    @{
+        var base64 = Convert.ToBase64String(Model.pic);
+        var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+    }
+    <img src="@imgSrc">
+</div>
