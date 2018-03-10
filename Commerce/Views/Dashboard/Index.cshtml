@@ -4,21 +4,43 @@
    
         @for(int i = 1; i <= Model.products.Count ;i++)
         {
+            if (@Model.products[i-1].images != null)
+                {
+                    var base64 = Convert.ToBase64String(@Model.products[i-1].images);
+                    var imgsrc = $"data:image/gif;base64,{base64}";
+                    <div style="display:none" class="thumbnail col-sm-3 products_hidden">
+                    <a href="/product/@Model.products[i-1].product_id" target="_blank">
+                        <img src="@imgsrc" alt="Lights" style="width:41px; height:55px;">
+                        <div class="caption ">
+                            <p class="text-center">@Model.products[i-1].name</p>
+                        </div>
+                    </a>
+                </div>
+                }
+                else
+                {
+                    var imgsrc = "#";
+                    <div style="display:none"  class="thumbnail col-sm-3 products_hidden">
+                    <a href="/product/@Model.products[i-1].product_id" target="_blank">
+                        <img src="@imgsrc" alt="Lights" style="width:41px ;height:55px;">
+                        <div class="caption">
+                            <p class="text-center">@Model.products[i-1].name</p>
+                        </div>
+                    </a>
+                </div>
+                }
             if(i%4 == 0)
             {
-                <a style="display:none" class="products_hidden col-sm-3" href="#" >@Model.products[i-1].name</a><br><br>
+                <br><br>
             }
-            else{
-                <a style="display:none" class="products_hidden col-sm-3" href="#" >@Model.products[i-1].name</a>
-            }
-           
-            
         }
    <br>
-    <div class="text-center">
+   <br>
+    
+</div>
+<div class="text-center">
         <a href="#" id="product_show"><u>Show More ...</u></a>
     </div>
-</div>
 <br>
 <div class="row orders">
     <h2><u>Recent Orders</u></h2>
@@ -53,27 +75,5 @@
         <a href="#" class="customer_show"><u>Show all customers ...</u></a>
     </div>
 </div>
-<script>
-    $(document).ready(function(){
-        $(".products_hidden").slice(0,4).show();
-        $(".orders_hidden").slice(0,3).show();
-        $(".customers_hidden").slice(0,3).show();
-        $("#product_show").click(function(e){
-            Show(".products_hidden:hidden", 4);
-        });
-        $("#order_show").click(function(e){
-            Show(".orders_hidden:hidden", 3);
-        });
-        $("#customer_show").click(function(e){
-            Show(".customers_hidden:hidden", 3);
-        });
 
-
-        function Show( str, num)
-        {
-            $(str).slice(0,num).show();
-        }
-    });
-    
-</script>
 

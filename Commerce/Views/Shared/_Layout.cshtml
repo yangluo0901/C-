@@ -46,6 +46,29 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
+        <script>
+    $(document).ready(function(){
+        $(".products_hidden").slice(0,4).show();
+        $(".orders_hidden").slice(0,3).show();
+        $(".customers_hidden").slice(0,3).show();
+        $("#product_show").click(function(e){
+            Show(".products_hidden:hidden", 4);
+        });
+        $("#order_show").click(function(e){
+            Show(".orders_hidden:hidden", 3);
+        });
+        $("#customer_show").click(function(e){
+            Show(".customers_hidden:hidden", 3);
+        });
+
+
+        function Show( str, num)
+        {
+            $(str).slice(0,num).show();
+        }
+    });
+    
+</script>
         <footer>
             <p>&copy; 2018 - Commerce</p>
         </footer>
